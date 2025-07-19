@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>顧客登録</title>
+</head>
+<body>
+  <h1>顧客登録フォーム</h1>
+  <form id="form">
+    <input name="name" placeholder="名前" required><br>
+    <input name="email" placeholder="メールアドレス" required><br>
+    <button type="submit">登録</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const params = new URLSearchParams(formData);
+      await fetch('http://localhost:8080/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params
+      });
+      alert('登録完了！');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
