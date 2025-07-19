@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -24,6 +25,17 @@
   </properties>
 
   <dependencies>
+=======
+<project xmlns="http://maven.apache.org/POM/4.0.0" ...>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>customer-backend</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <!-- Spring Boot -->
+>>>>>>> a195b00295475eb42630c677ff0cf14b3ac599f8
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
@@ -32,11 +44,18 @@
 
   <build>
     <plugins>
+<<<<<<< HEAD
+=======
+      <!-- Spring Boot Plugin -->
+>>>>>>> a195b00295475eb42630c677ff0cf14b3ac599f8
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
+<<<<<<< HEAD
 
+=======
+>>>>>>> a195b00295475eb42630c677ff0cf14b3ac599f8
 </project>
