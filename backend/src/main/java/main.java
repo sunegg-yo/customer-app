@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.io.FileInputStream;
+import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootApplication
@@ -24,22 +25,25 @@ public class Main {
                 .setDatabaseUrl("https://customer-app-62f73.firebaseio.com/")
                 .build();
         FirebaseApp.initializeApp(options);
+        System.out.println("Firebase 初期化成功");
     }
 
     @PostMapping("/add")
-    public String addCustomer(@RequestBody Map<String, String> payload) {
-        String name = payload.get("name");
-        String email = payload.get("email");
+    public String addCustomer(@RequestParam String name, @RequestParam String email) {
+        System.out.println("データ受信: name=" + name + ", email=" + email);
 
         DatabaseReference ref = FirebaseDatabase.getInstance()
                 .getReference("customers")
                 .push();
-        ref.setValueAsync(payload);
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("name", name);
+        data.put("email", email);
+
+        ref.setValueAsync(data);
+
+        System.out.println("Firebase 登録送信");
 
         return "OK";
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
     }
 }
