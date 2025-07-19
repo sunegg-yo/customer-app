@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -26,6 +27,8 @@
 
   <dependencies>
 =======
+=======
+>>>>>>> a195b00295475eb42630c677ff0cf14b3ac599f8
 <project xmlns="http://maven.apache.org/POM/4.0.0" ...>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
@@ -35,16 +38,33 @@
 
   <dependencies>
     <!-- Spring Boot -->
+<<<<<<< HEAD
+>>>>>>> a195b00295475eb42630c677ff0cf14b3ac599f8
+=======
 >>>>>>> a195b00295475eb42630c677ff0cf14b3ac599f8
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+<<<<<<< HEAD
+=======
+
+    <!-- Firebase Admin SDK -->
+    <dependency>
+      <groupId>com.google.firebase</groupId>
+      <artifactId>firebase-admin</artifactId>
+      <version>9.2.0</version>
+    </dependency>
+>>>>>>> a195b00295475eb42630c677ff0cf14b3ac599f8
   </dependencies>
 
   <build>
     <plugins>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      <!-- Spring Boot Plugin -->
+>>>>>>> a195b00295475eb42630c677ff0cf14b3ac599f8
 =======
       <!-- Spring Boot Plugin -->
 >>>>>>> a195b00295475eb42630c677ff0cf14b3ac599f8
@@ -55,7 +75,10 @@
     </plugins>
   </build>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> a195b00295475eb42630c677ff0cf14b3ac599f8
 =======
 >>>>>>> a195b00295475eb42630c677ff0cf14b3ac599f8
 </project>
