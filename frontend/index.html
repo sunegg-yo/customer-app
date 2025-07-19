@@ -6,25 +6,33 @@
 </head>
 <body>
   <h1>顧客登録フォーム</h1>
-  <form id="form">
-    <input name="name" placeholder="名前" required><br>
-    <input name="email" placeholder="メールアドレス" required><br>
+  <form id="customerForm">
+    <label>名前：<input type="text" name="name" required></label><br>
+    <label>メール：<input type="email" name="email" required></label><br>
     <button type="submit">登録</button>
   </form>
 
+  <p id="result"></p>
+
   <script>
-    const form = document.getElementById('form');
-    form.addEventListener('submit', async (e) => {
+    document.getElementById("customerForm").addEventListener("submit", async function (e) {
       e.preventDefault();
-      const formData = new FormData(form);
-      const params = new URLSearchParams(formData);
-      await fetch('http://localhost:8080/add', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: params
+      const form = e.target;
+      const data = {
+        name: form.name.value,
+        email: form.email.value
+      };
+
+      const res = await fetch("http://localhost:8080/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
       });
-      alert('登録完了！');
-      form.reset();
+
+      const result = await res.text();
+      document.getElementById("result").textContent = result;
     });
   </script>
 </body>

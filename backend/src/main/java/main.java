@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.io.FileInputStream;
-import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootApplication
@@ -28,14 +27,15 @@ public class Main {
     }
 
     @PostMapping("/add")
-    public String addCustomer(@RequestParam String name, @RequestParam String email) {
+    public String addCustomer(@RequestBody Map<String, String> payload) {
+        String name = payload.get("name");
+        String email = payload.get("email");
+
         DatabaseReference ref = FirebaseDatabase.getInstance()
                 .getReference("customers")
                 .push();
-        Map<String, Object> data = new HashMap<>();
-        data.put("name", name);
-        data.put("email", email);
-        ref.setValueAsync(data);
+        ref.setValueAsync(payload);
+
         return "OK";
     }
 
